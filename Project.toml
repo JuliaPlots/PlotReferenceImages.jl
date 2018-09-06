@@ -1,0 +1,5 @@
+name = "PlotReferenceImages"
+uuid = "eb903711-58f2-5030-b2b8-fcee0ca7bb7b"
+
+[deps]
+Requires = "ae029012-a4dd-5104-9daa-d747884805df"
