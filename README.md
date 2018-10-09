@@ -7,6 +7,7 @@ Reference images for the tests in Plots.jl and related packages and the Plots.jl
 To update test reference images for Plots.jl you can develop this package with:
 
 ```julia
+julia> ]
 pkg> dev https://github.com/JuliaPlots/PlotReferenceImages.jl.git
 ```
 
@@ -15,7 +16,7 @@ pkg> dev https://github.com/JuliaPlots/PlotReferenceImages.jl.git
 To update images for the Plots.jl documentation make sure you have the following packages installed:
 
 ```julia
-pkg> dev StatPlots, RDatasets, ProgressMeter, DataFrames, Distributions, StatsBase, Iterators
+pkg> add StatPlots, RDatasets, ProgressMeter, DataFrames, Distributions, StatsBase
 ```
 
 ## Usage
@@ -23,7 +24,7 @@ pkg> dev StatPlots, RDatasets, ProgressMeter, DataFrames, Distributions, StatsBa
 Plots test images can be updated with the Plots test suite:
 
 ```julia
-using Plots, Pkg
+using Plots
 include(normpath(pathof(Plots), "..", "..", "test", "runtests.jl"))
 ```
 If reference images differ from the previously saved images, a window opens showing both versions.
@@ -37,7 +38,7 @@ After updating all the images, make sure that all tests pass, `git add` the new 
 You can update the images for a specific backend in the backends section of the Plots documentation with:
 
 ```julia
-using PlotReferenceImages, StatPlots, RDatasets, ProgressMeter, DataFrames, Distributions, StatsBase, Iterators
+using PlotReferenceImages, StatPlots, RDatasets, ProgressMeter, DataFrames, Distributions, StatsBase
 generate_reference_images(sym)
 ```
 
