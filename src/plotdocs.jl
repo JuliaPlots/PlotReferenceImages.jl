@@ -4,14 +4,14 @@ filename(i::Int) = string("ref", i, i in Plots._animation_examples ? ".gif" : ".
 Plots.theme(:default)
 
 
-function generate_reference_images(be::Symbol)
+function generate_reference_images(be::Symbol, overwrite::Bool = true)
     for i in eachindex(Plots._examples)
-        i in Plots._backend_skips[be] || generate_reference_image(be, i)
+        i in Plots._backend_skips[be] || generate_reference_image(be, i, overwrite)
     end
 end
 
 
-function generate_reference_image(be::Symbol, i::Int)
+function generate_reference_image(be::Symbol, i::Int, overwrite::Bool = true)
     Plots.backend(be)
     map(ex -> Base.eval(Main, ex), Plots._examples[i].exprs)
 
@@ -19,12 +19,16 @@ function generate_reference_image(be::Symbol, i::Int)
     isdir(dir) || mkpath(dir)
 
     fn = joinpath(dir, filename(i))
+    overwrite || !isfile(fn) || return nothing
+
     if i in _animation_inds
         anim = @eval Main anim
         Plots.gif(anim, fn, fps = 15)
     else
         Plots.savefig(fn)
     end
+
+    return nothing
 end
 
 _animation_inds = (2, 30)

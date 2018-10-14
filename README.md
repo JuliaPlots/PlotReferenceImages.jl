@@ -39,7 +39,7 @@ You can update the images for a specific backend in the backends section of the 
 
 ```julia
 using PlotReferenceImages, StatPlots, RDatasets, ProgressMeter, DataFrames, Distributions, StatsBase
-generate_reference_images(sym)
+PlotReferenceImages.generate_reference_images(sym)
 ```
 
 Currently `sym in (:gr, :pyplot, :plotlyjs)` is supported. For PyPlot and PlotlyJS run `pyplot()` or `plotlyjs()` before to avoid world age issues.
