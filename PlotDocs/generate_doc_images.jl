@@ -1,5 +1,5 @@
 
-using StatPlots, StatsBase, DataFrames, RDatasets, Distributions, ProgressMeter#, Iterators
+using StatsPlots, StatsBase, DataFrames, RDatasets, Distributions, ProgressMeter, Random#, Iterators
 
 doc_path(args...) = joinpath(@__DIR__, args...)
 

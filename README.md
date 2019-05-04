@@ -16,7 +16,7 @@ pkg> dev https://github.com/JuliaPlots/PlotReferenceImages.jl.git
 To update images for the Plots.jl documentation make sure you have the following packages installed:
 
 ```julia
-pkg> add StatPlots, RDatasets, ProgressMeter, DataFrames, Distributions, StatsBase
+pkg> add StatsPlots, RDatasets, ProgressMeter, DataFrames, Distributions, StatsBase
 ```
 
 ## Usage
@@ -38,7 +38,7 @@ After updating all the images, make sure that all tests pass, `git add` the new 
 You can update the images for a specific backend in the backends section of the Plots documentation with:
 
 ```julia
-using PlotReferenceImages, StatPlots, RDatasets, ProgressMeter, DataFrames, Distributions, StatsBase
+using PlotReferenceImages, StatsPlots, RDatasets, ProgressMeter, DataFrames, Distributions, StatsBase
 PlotReferenceImages.generate_reference_images(sym)
 ```
 
