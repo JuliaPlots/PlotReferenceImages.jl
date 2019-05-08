@@ -1,5 +1,6 @@
 name = "PlotReferenceImages"
 uuid = "c5e800db-1e6b-5f72-915a-308d267b7a19"
+version = "1.0.0"
 
 [deps]
 Requires = "ae029012-a4dd-5104-9daa-d747884805df"
