@@ -11,6 +11,7 @@ To update test reference images for Plots.jl you can develop this package with:
 
 ```julia
 julia> ]
+
 pkg> dev https://github.com/JuliaPlots/PlotReferenceImages.jl.git
 ```
 
@@ -19,8 +20,9 @@ pkg> dev https://github.com/JuliaPlots/PlotReferenceImages.jl.git
 Plots test images can be updated with the Plots test suite:
 
 ```julia
-using Plots
-include(normpath(pathof(Plots), "..", "..", "test", "runtests.jl"))
+julia> ]
+
+pkg> test Plots
 ```
 If reference images differ from the previously saved images, a window opens showing both versions.
 Check carefully if the changes are expected and an improvement.
