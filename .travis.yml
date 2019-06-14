@@ -12,7 +12,7 @@ addons:
   apt:
     packages:
       # pyplot
-      - python3-matplotlib
+      - python-matplotlib
       # pgfplots
       - pdf2svg
       - texlive-latex-base
@@ -21,10 +21,6 @@ addons:
       - texlive-latex-extra
       # plotlyjs
       - xvfb
-env:
-  matrix:
-    # - PYTHON=python  # python 2.7
-    - PYTHON=python3 # python 3.5
 
 # uncomment the following lines to override the default test script
 script:
