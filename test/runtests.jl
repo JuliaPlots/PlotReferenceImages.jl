@@ -1,5 +1,9 @@
 using Test, PlotReferenceImages
 
+
+ENV["MPLBACKEND"]="agg" # no pyplot GUI
+
+
 @testset "PlotReferenceImages" begin
     @test generate_reference_image(:gr, 1, false) == nothing
     @test generate_reference_image(:pyplot, 1, false) == nothing
