@@ -1,6 +1,7 @@
 # PlotReferenceImages
 
-Reference images for the tests in Plots.jl and related packages and the Plots.jl documentation.
+This package serves two purposes.
+It holds the reference images for the [Plots.jl](https://github.com/JuliaPlots/Plots.jl) test suite and it provides utilities to generate the images for the [Plots.jl documentation](http://docs.juliaplots.org/latest/) at [PlotDocs.jl](https://github.com/JuliaPlots/PlotDocs.jl)
 
 ## Installation
 
@@ -9,14 +10,6 @@ To update test reference images for Plots.jl you can develop this package with:
 ```julia
 julia> ]
 pkg> dev https://github.com/JuliaPlots/PlotReferenceImages.jl.git
-```
-
----
-
-To update images for the Plots.jl documentation make sure you have the following packages installed:
-
-```julia
-pkg> add StatsPlots, RDatasets, ProgressMeter, DataFrames, Distributions, StatsBase
 ```
 
 ## Usage
@@ -38,21 +31,33 @@ After updating all the images, make sure that all tests pass, `git add` the new 
 You can update the images for a specific backend in the backends section of the Plots documentation with:
 
 ```julia
-using PlotReferenceImages, StatsPlots, RDatasets, ProgressMeter, DataFrames, Distributions, StatsBase
-PlotReferenceImages.generate_reference_images(sym)
+using PlotReferenceImages
+generate_reference_images(sym)
 ```
 
-Currently `sym in (:gr, :pyplot, :plotlyjs)` is supported. For PyPlot and PlotlyJS run `pyplot()` or `plotlyjs()` before to avoid world age issues.
+Currently `sym ∈ (:gr, :pyplot, :plotlyjs, :pgfplots)` is supported.
+To update only a single image you can do:
+
+```julia
+generate_reference_image(sym, i::Int)
+```
 
 To update the Plots documentaion images run:
 
 ```julia
 using PlotReferenceImages
-include(normpath(pathof(PlotReferenceImages), "..", "..", "PlotDocs", "generate_doc_images.jl"))
+generate_doc_images()
 ```
+
+This takes some time. So if you only want to update a specific image, run:
+
+```julia
+generate_doc_image(id::String)
+```
+Possible values for `id` can be found in the keys of `PlotReferenceImages.DOC_IMAGE_FILES`.
 
 If you are satisfied with the new images, commit and submit a PR.
 
 ## Contributing
 
-Any help to make these processes less ccomplicated or automate them is very much appreciated.
+Any help to make these processes less complicated or automate them is very much appreciated.

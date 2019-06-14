@@ -1,0 +1,26 @@
+# Documentation: http://docs.travis-ci.com/user/languages/julia/
+language: julia
+os:
+  - linux
+julia:
+  - 1.1
+  - nightly
+notifications:
+email: false
+
+addons:
+  apt:
+    packages:
+      # pyplot
+      - python-matplotlib
+      - python3-matplotlib
+      # pgfplots
+      - pdf2svg
+      - texlive-latex-base
+      - texlive-binaries
+      - texlive-pictures
+      - texlive-latex-extra
+env:
+  matrix:
+    # - PYTHON=python  # python 2.7
+    - PYTHON=python3 # python 3.5
