@@ -12,7 +12,6 @@ addons:
   apt:
     packages:
       # pyplot
-      - python-matplotlib
       - python3-matplotlib
       # pgfplots
       - pdf2svg
