@@ -1,3 +1,5 @@
+using Pkg
+pkg"build PyPlot"
 using Test, PlotReferenceImages
 
 
