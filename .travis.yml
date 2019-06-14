@@ -11,16 +11,21 @@ email: false
 addons:
   apt:
     packages:
-      # pyplot
-      - python-matplotlib
-      - python3-matplotlib
       # pgfplots
       - pdf2svg
       - texlive-latex-base
       - texlive-binaries
       - texlive-pictures
       - texlive-latex-extra
+      # plotlyjs
+      - xvfb
+      # orca
+      - libgconf2-4
 env:
   matrix:
-    # - PYTHON=python  # python 2.7
-    - PYTHON=python3 # python 3.5
+    - PYTHON=""
+
+# uncomment the following lines to override the default test script
+script:
+ - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
+ - xvfb-run julia -e 'using Pkg; Pkg.build(); Pkg.test(coverage=true)'
