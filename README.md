@@ -1,5 +1,7 @@
 # PlotReferenceImages
 
+[![Build Status](https://travis-ci.org/JuliaPlots/PlotReferenceImages.jl.svg?branch=master)](https://travis-ci.org/JuliaPlots/PlotReferenceImages.jl)
+
 This package serves two purposes.
 It holds the reference images for the [Plots.jl](https://github.com/JuliaPlots/Plots.jl) test suite and it provides utilities to generate the images for the [Plots.jl documentation](http://docs.juliaplots.org/latest/) at [PlotDocs.jl](https://github.com/JuliaPlots/PlotDocs.jl)
 

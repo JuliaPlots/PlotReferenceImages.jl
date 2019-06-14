@@ -11,8 +11,6 @@ email: false
 addons:
   apt:
     packages:
-      # pyplot
-      # - python3-matplotlib
       # pgfplots
       - pdf2svg
       - texlive-latex-base
