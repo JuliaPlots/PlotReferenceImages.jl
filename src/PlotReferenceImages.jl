@@ -23,10 +23,10 @@ If no file is found, a path pointing to the file of the folder specified by `ver
 """
 function reference_file(backend, i, version)
     refdir = local_path("Plots", string(backend))
-    fn = "ref$idx.png"
+    fn = "ref$i.png"
     versions = sort(VersionNumber.(readdir(refdir)), rev = true)
 
-    reffn = joinpath(refdir, VersionNumber(version), fn)
+    reffn = joinpath(refdir, string(version), fn)
     for v in versions
         tmpfn = joinpath(refdir, string(v), fn)
         if isfile(tmpfn)
@@ -38,9 +38,13 @@ function reference_file(backend, i, version)
     return reffn
 end
 
+
+reference_path(backend, version) = local_path("Plots", string(backend), string(version))
+
+
 include("doc_examples.jl")
 include("plotdocs.jl")
 
-export generate_doc_image, generate_doc_images, generate_reference_image, generate_reference_images, reference_file
+export generate_doc_image, generate_doc_images, generate_reference_image, generate_reference_images, reference_file, reference_path
 
 end # module
