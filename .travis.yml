@@ -21,6 +21,8 @@ addons:
       - texlive-latex-extra
       # plotlyjs
       - xvfb
+      # orca
+      - libgconf2-4
 env:
   matrix:
     - PYTHON=""
