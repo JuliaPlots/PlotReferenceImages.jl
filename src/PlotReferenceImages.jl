@@ -1,6 +1,5 @@
 module PlotReferenceImages
 
-theme(:default)
 
 local_path(args...) = normpath(@__DIR__, "..", args...)
 
