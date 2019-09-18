@@ -1,15 +1,5 @@
 module PlotReferenceImages
 
-using DataStructures, Random
-using StatsPlots, RDatasets, ProgressMeter, DataFrames, Distributions, StatsBase
-# For Plots' Examples
-using Statistics, FileIO, ImageMagick, SparseArrays
-
-# import and initialize plotting backends
-import PyPlot, PlotlyJS, ORCA, PGFPlots
-PyPlot.ioff()
-
-theme(:default)
 
 local_path(args...) = normpath(@__DIR__, "..", args...)
 
@@ -41,10 +31,6 @@ end
 
 reference_path(backend, version) = local_path("Plots", string(backend), string(version))
 
-
-include("doc_examples.jl")
-include("plotdocs.jl")
-
-export generate_doc_image, generate_doc_images, generate_reference_image, generate_reference_images, reference_file, reference_path
+export reference_file, reference_path
 
 end # module
