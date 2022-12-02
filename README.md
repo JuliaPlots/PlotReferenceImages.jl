@@ -34,8 +34,8 @@ You can update the images for a specific backend by editing `test/runtests.jl` i
 
 On new `Plots` releases, tag a new version in `PlotReferenceImages`, using the github interface or git in cli:
 ```console
-$ git tag v1.36.6
-$ git push upstream --tags
+$ git tag -a -m 'v1.36.6' v1.36.6 523ec5f4f4ce785815c346ccc3b1e73788b14618
+$ git push upstream --follow-tags
 ```
 
 ## Contributing
