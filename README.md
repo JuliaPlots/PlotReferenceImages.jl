@@ -30,6 +30,14 @@ Otherwise it would be great if you could open an issue on Plots.jl, submit a PR 
 After updating all the images, make sure that all tests pass, `git add` the new files, commit and submit a PR.
 You can update the images for a specific backend by editing `test/runtests.jl` in Plots.
 
+## Update tags
+
+On new `Plots` releases, tag a new version in `PlotReferenceImages`, using the github interface or git in cli:
+```console
+$ git tag v1.36.6
+$ git push upstream --tags
+```
+
 ## Contributing
 
 Any help to make these processes less complicated or automate them is very much appreciated.
