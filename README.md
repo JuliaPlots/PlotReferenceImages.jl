@@ -1,6 +1,5 @@
 # PlotReferenceImages
 
-[![Build Status](https://travis-ci.org/JuliaPlots/PlotReferenceImages.jl.svg?branch=master)](https://travis-ci.org/JuliaPlots/PlotReferenceImages.jl)
 
 This package holds the reference images for the [Plots.jl](https://github.com/JuliaPlots/Plots.jl) test suite.
 
@@ -29,6 +28,11 @@ In that case agree to overwrite the old image.
 Otherwise it would be great if you could open an issue on Plots.jl, submit a PR with a fix for the regression or update the PR you are currently working on.
 After updating all the images, make sure that all tests pass, `git add` the new files, commit and submit a PR.
 You can update the images for a specific backend by editing `test/runtests.jl` in Plots.
+
+For a non-interactive update run
+```
+VISUAL_REGRESSION_TESTS_AUTO=true; julia --project=@. -e 'using Pkg; Pkg.test("Plots")'
+```
 
 ## Update tags
 
