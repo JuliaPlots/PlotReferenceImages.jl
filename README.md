@@ -31,7 +31,7 @@ You can update the images for a specific backend by editing `test/runtests.jl` i
 
 For a non-interactive update run
 ```
-VISUAL_REGRESSION_TESTS_AUTO=true; julia --project=@. -e 'using Pkg; Pkg.test("Plots")'
+VISUAL_REGRESSION_TESTS_AUTO=true julia --project=@. -e 'using Pkg; Pkg.test("Plots")'
 ```
 
 ## Update tags
