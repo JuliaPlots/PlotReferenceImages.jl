@@ -1,6 +1,7 @@
 # PlotReferenceImages
 
 This package holds the reference images for the [Plots.jl](https://github.com/JuliaPlots/Plots.jl) test suite for `v1` (legacy version).
+
 For Plots `v2` (WIP), the reference images are included in the [assets](https://github.com/JuliaPlots/Plots.jl/tree/v2/assets) directory of the monorepo.
 
 ## Installation
